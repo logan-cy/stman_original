@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Members.master.cs" Inherits="Members_Members" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+        
+    <link href="~/App_Themes/Default/core.css" rel="Stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1" EnablePartialRendering="true">
+    </ajaxToolkit:ToolkitScriptManager>
+    <h1>
+        <asp:Label runat="server" ID="lblCompanyName"></asp:Label></h1>
+    <div class="wrap">
+        <div class="menu">
+            <asp:Menu runat="server" ID="mnuLoggedIn" Orientation="Horizontal" RenderingMode="List">
+                <Items>
+                    <asp:MenuItem Text="Home" NavigateUrl="~/Members/" ToolTip="Home"></asp:MenuItem>
+                    <asp:MenuItem Text="Manage Complexes" NavigateUrl="~/Members/Complex.aspx" ToolTip="View, add, edit or delete complexes">
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Manage Units" NavigateUrl="Units.aspx" ToolTip="View, add, edit or delete units">
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Manage Subcontractors" NavigateUrl="Subcontractors.aspx" ToolTip="View, add, edit or delete subcontractors">
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Manage Insurers" NavigateUrl="Insurers.aspx" ToolTip="View, add, edit or delete insurers">
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Manage Policies" NavigateUrl="Policies.aspx" ToolTip="View, add, edit or delete insurance policies">
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Manage Jobs" NavigateUrl="Jobs.aspx" ToolTip="View, add, edit or delete jobs">
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Reports" NavigateUrl="Reports.aspx" ToolTip="Pull reports from various criteria">
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="?" NavigateUrl="~/Help/" ToolTip="Get help if you don't understand something">
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </div>
+        <div class="right-align">
+            <asp:Label runat="server" ID="lblWelcome"></asp:Label>
+            |
+            <asp:LinkButton runat="server" ID="lnkLogout" Text="Log Out" OnClick="lnkLogout_Click"></asp:LinkButton>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <div class="footer">
+         <a href="http://www.loganyoung.za.net/" target="_blank">Logan Young</a> &copy; 2013
+    </div>
+    </form>
+</body>
+</html>

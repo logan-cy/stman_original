@@ -1,0 +1,46 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<asp:Button runat="server" CssClass="button" />
+
+<asp:RadioButtonList runat="server" RepeatDirection="Horizontal" RepeatColumns="2" RepeatLayout="Flow" CssClass="rbl"></asp:RadioButtonList>
+
+<asp:RequiredFieldValidator runat="server" ForeColor="Red"></asp:RequiredFieldValidator>
+
+<asp:GridView
+    runat="server" Font-Underline="False"
+    CssClass="noborder" AllowPaging="true"
+    AutoGenerateColumns="false" Width="100%"
+    PageSize="10" PagerStyle-CssClass="pagingrow"
+    PagerSettings-Mode="NumericFirstLast" PagerSettings-PageButtonCount="4"
+    AllowSorting="true" HeaderStyle-CssClass="headerrow"
+    RowStyle-CssClass="itemrow" AlternatingRowStyle-CssClass="altrow">
+    <EmptyDataTemplate>
+        <asp:Label runat="server" ID="lblNoData" Text="No data matches your request."></asp:Label>
+    </EmptyDataTemplate>
+</asp:GridView>
+
+<asp:GridView runat="server" SkinID="unformatted"
+    Font-Underline="False" Width="100%"
+    CssClass="noborder" AllowPaging="true"
+    PageSize="10" PagerStyle-CssClass="pagingrow"
+    PagerSettings-Mode="NumericFirstLast" PagerSettings-PageButtonCount="4"
+    AllowSorting="true" HeaderStyle-CssClass="headerrow"
+    RowStyle-CssClass="itemrow" AlternatingRowStyle-CssClass="altrow">
+    <EmptyDataTemplate>
+        <asp:Label runat="server" ID="lblNoData" Text="No data matches your request."></asp:Label>
+    </EmptyDataTemplate>
+</asp:GridView>

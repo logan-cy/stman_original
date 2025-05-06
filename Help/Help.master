@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Members/Members.master" AutoEventWireup="true"
+    CodeFile="Help.master.cs" Inherits="Help_Help" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:UpdatePanel runat="server" ID="upHelp">
+        <ContentTemplate>
+            <h2>
+                SecMan Documentation</h2>
+            <div class="left-column-narrow">
+                <h3>
+                    Navigation</h3>
+                <asp:TreeView runat="server" ID="tvNavigation" ShowExpandCollapse="false" LeafNodeStyle-HorizontalPadding="20" NodeStyle-HorizontalPadding="20" OnSelectedNodeChanged="tvNavigation_SelectedNodeChanged">
+                    <Nodes>
+                        <asp:TreeNode Text="Introduction" NavigateUrl="~/Help/" Selected="true"></asp:TreeNode>
+                        <asp:TreeNode Text="White House Jobs Process" NavigateUrl="~/Help/job-process.aspx">
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="Data Management">
+                            <asp:TreeNode Text="Finding Data">
+                                <asp:TreeNode Text="Using Search" NavigateUrl="~/Help/DataManagement/search.aspx">
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Using Filters" NavigateUrl="~/Help/DataManagement/filter.aspx">
+                                </asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="Understanding Data">
+                                <asp:TreeNode Text="Complexes" NavigateUrl="~/Help/UnderstandingData/understanding-complexes.aspx">
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Units" NavigateUrl="~/Help/UnderstandingData/understanding-units.aspx">
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Subcontractors" NavigateUrl="~/Help/UnderstandingData/understanding-subcontractors.aspx">
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Insurers" NavigateUrl="~/Help/UnderstandingData/understanding-insurers.aspx">
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Policies" NavigateUrl="~/Help/UnderstandingData/understanding-policies.aspx">
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Jobs" NavigateUrl="~/Help/UnderstandingData/understanding-jobs.aspx">
+                                </asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="Adding Data" Expanded="false">
+                                <asp:TreeNode Text="Adding A Single Entry" NavigateUrl="~/Help/DataManagement/adding-a-single-entry.aspx">
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Adding Bulk Data" NavigateUrl="~/Help/DataManagement/bulk-upload.aspx">
+                                </asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="Updating Data" NavigateUrl="~/Help/DataManagement/updating-data.aspx">
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="Deleting Data" NavigateUrl="~/Help/DataManagement/deleting-data.aspx">
+                            </asp:TreeNode>
+                        </asp:TreeNode>
+                        <asp:TreeNode Text="Getting More Help" NavigateUrl="~/Help/additional-support.aspx">
+                        </asp:TreeNode>
+                    </Nodes>
+                </asp:TreeView>
+            </div>
+            <div class="right-column-wide">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <asp:UpdateProgress runat="server" ID="uppInsurer" DisplayAfter="10">
+        <ProgressTemplate>
+            <asp:Panel runat="server" ID="pnlProgress" CssClass="modal">
+                <div>
+                    <asp:Image runat="server" ID="imgProgress" ImageUrl="~/Images/progress.gif" AlternateText="Processing" />
+                </div>
+                <strong>Processing...</strong>
+            </asp:Panel>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+</asp:Content>
